@@ -1,10 +1,17 @@
-document.getElementById('phone-plus').addEventListener('click', function(){
+function updateProductQuantity(isIncreasing){
     const productValue = document.getElementById('phone-quantity');
     const productQuantity = parseInt(productValue.value);
-    productValue.value = productQuantity + 1;
+    if(isIncreasing){
+        productValue.value = productQuantity + 1;
+    }else{
+        productValue.value = productQuantity - 1;
+    }
+}
+
+//! Phone cart
+document.getElementById('phone-plus').addEventListener('click', function(){
+    updateProductQuantity(true)
 })
 document.getElementById('phone-minus').addEventListener('click', function(){
-    const productValue = document.getElementById('phone-quantity');
-    const productQuantity = parseInt(productValue.value);
-    productValue.value = productQuantity - 1;
+    updateProductQuantity(false)
 })
