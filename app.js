@@ -1,4 +1,4 @@
-function updateProductQuantity(product, price, isIncreasing){
+function updateQuantityAndAmount(product, price, isIncreasing){
     const productValue = document.getElementById(product + '-quantity');
     let productQuantity = parseInt(productValue.value);
     // Increase or decrease product quantity
@@ -15,16 +15,16 @@ function updateProductQuantity(product, price, isIncreasing){
 
 //! Phone cart
 document.getElementById('phone-plus').addEventListener('click', function(){
-    updateProductQuantity("phone", 1219, true)
+    updateQuantityAndAmount("phone", 1219, true)
 })
 document.getElementById('phone-minus').addEventListener('click', function(){
-    updateProductQuantity("phone", 1219, false)
+    updateQuantityAndAmount("phone", 1219, false)
 })
 
 //! Case cart
 document.getElementById('case-plus').addEventListener('click', function(){
-    updateProductQuantity("case", 59, true)
+    updateQuantityAndAmount("case", 59, true)
 })
 document.getElementById('case-minus').addEventListener('click', function(){
-    updateProductQuantity("case", 59, false)
+    updateQuantityAndAmount("case", 59, false)
 })
