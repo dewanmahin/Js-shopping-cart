@@ -11,6 +11,27 @@ function updateQuantityAndAmount(product, price, isIncreasing){
     // Update the price amount based on product quantity
     const productPrice = document.getElementById(product + '-price');
     productPrice.innerText = price * productQuantity;
+    // Calculate total
+    calculateTotal();
+}
+
+function getQuantityValue(product){
+    const productQuantityValue = document.getElementById(product + '-quantity');
+    const productQuantity = parseInt(productQuantityValue.value);
+    return productQuantity;
+}
+
+function calculateTotal(){
+    const phoneTotal = getQuantityValue('phone') * 1219;
+    const caseTotal = getQuantityValue('case') * 59;
+    // calculate amount
+    const subTotal = phoneTotal + caseTotal;
+    const tax = (subTotal * 10) / 100;
+    const total = subTotal + tax;
+    // update on the html
+    document.getElementById('sub-total').innerText = subTotal;
+    document.getElementById('tax').innerText = tax;
+    document.getElementById('total').innerText = total;
 }
 
 //! Phone cart
